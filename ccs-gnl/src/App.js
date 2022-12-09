@@ -1,15 +1,18 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ResponsiveDrawer from './components/Home';
+import SignIn from './pages/form/SignIn';
+
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <ResponsiveDrawer />
-      </div>
-    </Router>
+    <BrowserRouter>
+      <Routes>
+       <Route path='/' element={<SignIn />} exact />
+       <Route path='/ResponsiveDrawer' element={<ResponsiveDrawer />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
